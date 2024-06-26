@@ -60,10 +60,10 @@ const Home: NextPage = () => {
           <span className="block text-2xl mb-2">SpeedRunEthereum</span>
           <span className="block text-4xl font-bold">Challenge #1: Simple DeFi</span>
         </h1>
-        <div className="flex flex-col items-center justify-center">
+        <div className="md:h-[60vh] flex flex-row items-center justify-center">
 
           {/* Input container */}
-          <div className="md:w-[50%] flex flex-col items-center">
+          <div className="md:w-[30%] h-[100%] flex flex-col items-center p-3 m-2">
             <span className="block text-4xl mb-2 mt-6">Buy a Coffee!</span>
             <Image
             src={coffee}
@@ -71,39 +71,46 @@ const Home: NextPage = () => {
             alt="challenge banner"
           />
             <div className="w-[100%] flex flex-col items-center mt-6">
-              <label className="text-3xl mb-2">Name: </label>
+              <label className="text-2xl mb-2">Name: </label>
               <input
                 type="text"
-                className="w-[100%] text-xl p-2"
+                className="w-[100%] text-xl p-2 bg-white text-black"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
-              />            </div>
+              />
+            </div>
             <div className="w-[100%] flex flex-col items-center mt-6">
-              <label className="text-3xl mb-2">Send a Message: </label>
+              <label className="text-2xl mb-2">Message: </label>
               <textarea
-                className="w-[100%] h-[100px] text-xl resize-none p-2"
+                className="w-[100%] h-[150px] text-xl resize-none p-2 bg-white text-black"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
               />
             </div>
             <button
-              className="mt-6 text-2xl rounded-xl border-4 p-2 cursor-pointer"
+              className="mt-10 mb-2 text-xl rounded-xl border-4 p-2 cursor-pointer"
               onClick={handleBuyCoffee}
             >Send Message with Tips (0.001 ETH)</button>
           </div>
 
+          <div className="h-[100%] border-4 m-4"></div>
+
           {/* show memos */}
-          <div className="text-3xl mt-14 mb-8">Message Board</div>
-            {memos && memos.map((memo: Memo, index: number) => {
-              return (
-                <>
-              <div key={index} className="rounded-xl border-2 m-2 p-2">
-                <div>from: {memo.name} ({memo.from})</div>
-                <div>message: {memo.message}</div>
-              </div>
-                </>
-              )
-            })}
+          <div className="md:w-[40%] h-[100%] p-3 m-2 flex flex-col">
+            <span className="block text-4xl mb-6 mt-6 flex justify-center">Message Board</span>
+            <div className="flex flex-col items-center overflow-scroll">
+              {memos && memos.map((memo: Memo, index: number) => {
+                return (
+                  <>
+                  <div key={index} className="w-[100%] rounded-xl border-2 mb-2 p-2">
+                    <div className="w-[100%]">from: {memo.name} ({memo.from})</div>
+                    <div className="w-[100%]">message: {memo.message}</div>
+                  </div>
+                  </>
+                )
+              })}
+            </div>
+            </div>
           </div>
       </div>
     </div>

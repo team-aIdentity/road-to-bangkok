@@ -76,14 +76,6 @@ contract BuyMeACoffee {
     }
 
     /**
-     * @dev 현재 계약의 잔액을 조회
-     * @return uint256 현재 계약의 잔액
-     */
-    function getContractBalance() public view returns (uint256) {
-        return address(this).balance;
-    }
-
-    /**
      * @dev 모든 저장된 잔액을 컨트랙트 소유주에게 전달
      */
     function withdrawTips() public {

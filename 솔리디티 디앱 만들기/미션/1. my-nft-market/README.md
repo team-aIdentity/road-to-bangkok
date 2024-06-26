@@ -99,7 +99,7 @@ NFT가 생성되는 것을 볼 수 있다.
 [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) 과 [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) 구성에 대한 것은  Next.js 문서에서 확인할 수 있다.
 
 **[NFT Minting Sequence]**
-<img src='../../images/nft_minting_sequence.png' width='600px'></img>
+<img src='./images/nft_minting_sequence.png' width='600px'></img>
 
 ---
 
