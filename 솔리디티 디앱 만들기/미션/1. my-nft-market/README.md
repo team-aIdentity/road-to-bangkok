@@ -12,6 +12,8 @@ NFT(Non-fungible token, 대체 불가능 토큰)은 블록체인에 저장된 �
 [OpenSea](https://opensea.io/) <br/>
 [Binance NFT](https://www.binance.com/en/nft/home)
 
+> 🔥 이번 미션에서는 ERC-721 기반 NFT 컨트랙트를 배포하여 메타데이터를 IPFS에 저장하고 이를 민팅할 수 있는 웹앱 프론트엔드를 제작한다.
+
 ---
 
 ## 🚩 Step 1. 환경
@@ -97,7 +99,7 @@ NFT가 생성되는 것을 볼 수 있다.
 [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) 과 [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) 구성에 대한 것은  Next.js 문서에서 확인할 수 있다.
 
 **[NFT Minting Sequence]**
-<img src='../../images/nft_minting_sequence.png' width='600px'></img>
+<img src='./images/nft_minting_sequence.png' width='600px'></img>
 
 ---
 
