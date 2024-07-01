@@ -1,4 +1,4 @@
-# 간단한 Staking 만들기
+# Scaffold-ETH 2로 간단한 Staking 만들기
 
 ## 🚩 Step 0. Staking이란?
 
