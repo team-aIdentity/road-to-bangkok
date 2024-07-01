@@ -1,4 +1,4 @@
-# 간단한 Payment 만들기 (Defi)
+# Scaffold-ETH 2로 간단한 Payment 만들기 (Defi)
 
 ## 🚩 Step 0. DeFi란?
 
