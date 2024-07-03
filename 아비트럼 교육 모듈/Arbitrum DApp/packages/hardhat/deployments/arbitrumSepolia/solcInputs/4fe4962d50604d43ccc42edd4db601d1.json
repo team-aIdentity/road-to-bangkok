@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Voting.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Voting {\n\tstruct Candidate {\n\t\tstring name;\n\t\tuint voteCount;\n\t}\n\n\taddress public owner;\n\tmapping(address => bool) public voters;\n\tCandidate[] public candidates;\n\taddress[] public voterList;\n\n\tconstructor(string[] memory candidateNames) {\n\t\towner = msg.sender; // 배포자를 owner로 설정\n\t\tfor (uint i = 0; i < candidateNames.length; i++) {\n\t\t\tcandidates.push(Candidate({\n\t\t\t\tname: candidateNames[i],\n\t\t\t\tvoteCount: 0\n\t\t\t}));\n\t\t}\n\t}\n\n\tfunction vote(uint candidateIndex) public {\n\t\trequire(!voters[msg.sender], \"Already voted.\");\n\t\trequire(candidateIndex < candidates.length, \"Invalid candidate.\");\n\n\t\tvoters[msg.sender] = true;\n\t\tvoterList.push(msg.sender); // 투표한 주소를 목록에 추가\n\t\tcandidates[candidateIndex].voteCount++;\n\t}\n\n\tfunction getCandidates() public view returns (Candidate[] memory) {\n\t\treturn candidates;\n\t}\n\n\tfunction resetVotes() public {\n\t\trequire(msg.sender == owner, \"Only owner can reset votes.\");\n\t\tfor (uint i = 0; i < candidates.length; i++) {\n\t\t\tcandidates[i].voteCount = 0;\n\t\t}\n\t\tfor (uint i = 0; i < voterList.length; i++) {\n\t\t\tvoters[voterList[i]] = false;\n\t\t}\n\t\tdelete voterList; // 투표자 목록 초기화\n\t}\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
