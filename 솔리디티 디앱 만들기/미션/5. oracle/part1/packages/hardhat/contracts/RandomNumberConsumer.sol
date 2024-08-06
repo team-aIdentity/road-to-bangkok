@@ -57,7 +57,7 @@ contract RandomNumberConsumer is VRFConsumerBaseV2Plus {
             })
         );
         s_requests[requestId] = RequestStatus({
-            randomResult: new uint256,
+            randomResult: 0,
             exists: true,
             fulfilled: false
         });
