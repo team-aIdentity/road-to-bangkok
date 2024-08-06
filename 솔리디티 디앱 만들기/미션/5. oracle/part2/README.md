@@ -30,8 +30,8 @@ Scaffod-ETH 2 프로젝트 생성 및 의존성 설치
 => 새로운 프로젝트를 생성할지 만들어놓은 프로젝트를 clone해갈지 추후 결정
 
 ```sh
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git oracle/part1
-cd oracle/part1
+git clone https://github.com/scaffold-eth/scaffold-eth-2.git oracle/part2
+cd oracle/part2
 yarn install
 ```
 
