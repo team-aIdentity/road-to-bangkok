@@ -23,7 +23,8 @@ contract RandomNumberConsumer is VRFConsumerBaseV2Plus {
 
     bytes32 public keyHash =
         0x787d74caea10b2b357790d5b5247c2f63d1d91572a9846f780606e4d953677ae;
-    string public purpose = "Building dApps with random numbers!!!";    uint32 public callbackGasLimit = 100000;
+    string public purpose = "Building dApps with random numbers!!!";   
+    uint32 public callbackGasLimit = 100000;
     uint16 public requestConfirmations = 3;
     uint32 public numWords = 1;
 
@@ -56,7 +57,7 @@ contract RandomNumberConsumer is VRFConsumerBaseV2Plus {
             })
         );
         s_requests[requestId] = RequestStatus({
-            randomResult: 0,
+            randomResult: new uint256,
             exists: true,
             fulfilled: false
         });
