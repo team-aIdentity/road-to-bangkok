@@ -1,4 +1,4 @@
-# Scaffold-ETH 2로 간단한 NFT 마켓 만들기 (ERC721)
+# Scaffold-ETH 2로 간단한 Oracle 사용 해보기
 
 ## 🚩 Mission 5. Oracle 사용하기
 
